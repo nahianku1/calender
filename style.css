@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 500px;
+  min-height: 450px;
+  border-radius: 10px;
+  background-color: white;
+  user-select: none;
+}
+
+.box .box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: 800;
+  color: rgb(59, 58, 58);
+}
+.box .box-header .navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100px;
+}
+.box .box-header .navigation i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #e6e3e3;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.box-day ul{
+    display: flex;
+    padding: 25px;
+    justify-content: space-between;
+}
+
+.box-day ul li{
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.box-date ul{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.box-date ul li{
+    position: relative;
+    list-style: none;
+    width: calc(100% / 7);
+    font-size: 18px;
+    margin-bottom: 25px;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: 600;
+
+
+}
+.box-date ul li.inactive{
+  cursor: auto;
+}
+
+.box-date ul li::before{
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.box-date ul li:not(.inactive,.active):hover::before{
+    background-color: #e6e3e3;
+}
+
+.box-date ul li.active::before{
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(165, 243, 101);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.box-date ul li.inactive{
+  color: rgb(152, 153, 155);
+}
+
+.box .footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+
